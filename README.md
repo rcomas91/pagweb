@@ -44,6 +44,7 @@ Ejemplo de reemplazo en `index.html`:
 ```html
 <img src="assets/havana-thumb.jpg" data-full="assets/havana-full.jpg" alt="La Habana" />
 ```
+	- Nota: intenté descargar automáticamente la foto del guía desde Unsplash pero la conexión falló en este entorno; por eso he creado un placeholder local en `assets/guide.svg`. Puedes reemplazarlo por tu foto profesional copiando tu imagen a `assets/guide.jpg` (o `.png`) y actualizando la ruta en `index.html`.
 
 Después de cambiar las imágenes, puedes editar las leyendas (captions) en el objeto `translations` dentro de `index.html` si quieres textos personalizados en RU y ES.
 
@@ -52,6 +53,28 @@ Carrusel
 	1. Reemplaza las URLs dentro de los `<img>` en la sección `#gallery` por tus propias imágenes (usar `assets/` es recomendable para sitios offline).
 	2. Ajusta el número de cards añadiendo o eliminando `<figure class="carousel-item">` en `index.html`.
 	3. Si quieres, puedo añadir soporte para deslizar con touch avanzado o autoplay.
+
+Fondo cultural ruso
+- He añadido un fondo sutil en la página inspirado en la arquitectura rusa (domos/onion domes estilizados) como un patrón SVG repetido con una capa blanca translúcida encima para mantener legibilidad.
+- Para cambiar el fondo por otra imagen o patrón, abra `styles.css` y busque la sección que define `background-image` en `body` (es una combinación de `linear-gradient` y un `data:image/svg+xml` embebido). Puedes reemplazar la URL `data:image/svg+xml;utf8,...` por una imagen local, por ejemplo:
+
+```css
+body { background-image: linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)), url('assets/mi-fondo.jpg'); }
+```
+
+O usar otra imagen remota si prefieres.
+
+Banderas en el selector de idioma
+- Los botones de idioma ahora muestran banderitas (emoji) junto a la sigla: 🇷🇺 RU y 🇪🇸 ES. Si prefieres iconos SVG en vez de emoji, puedo cambiarlos y colocarlos como `background-image` o `img` dentro de los botones.
+
+Cambiar la imagen de fondo por idioma
+- Si quieres que el fondo cambie según el idioma (por ejemplo, foto rusa para RU y otra para ES), puedo implementarlo: añadiría un objeto `backgrounds` en el script y aplicaría `document.body.style.backgroundImage` al cambiar idioma.
+
+Perfil del guía
+- He añadido una sección separada con foto y descripción del guía (hombre carismático). Para personalizar:
+	- Reemplaza la URL del `src` de `.guide-photo` por tu imagen local en `assets/guide.jpg` o por otra URL.
+	- Las cadenas (nombre, rol, biografía) se localizan mediante las claves `guide.name`, `guide.role`, `guide.bio` en el objeto `translations` dentro de `index.html`.
+	- Si quieres que la imagen del guía esté disponible localmente, puedo descargarla y crear `assets/guide.jpg` y actualizar el `src` automáticamente.
 
 Дальнейшие улучшения (опционально)
 - Подключить серверную обработку заявок (например, Formspree, Netlify Forms или собственный endpoint), чтобы не полагаться на локальный почтовый клиент.

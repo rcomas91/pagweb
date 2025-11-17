@@ -7,6 +7,19 @@
 }
 *{box-sizing:border-box}
 body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; color:var(--text); background:var(--bg); line-height:1.5}
+/* Fondo cultural ruso: combinación de gradiente suave y patrón SVG repetido (onion domes estilizados) */
+/* capa base + sutil patrón SVG (domos/куполы) + luz encima */
+body{
+  /* foto de fondo relacionada con cultura rusa (San Basilio). Si prefieres otra, reemplaza la URL por la tuya. */
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(255,255,255,0.68), rgba(255,255,255,0.68)),
+    url('https://upload.wikimedia.org/wikipedia/commons/6/6b/Saint_Basil%27s_Cathedral.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+}
 .container{max-width:var(--container-width); margin:0 auto; padding:24px}
 .site-header{background:linear-gradient(90deg, #fef3ec, #fff); padding:48px 0; border-bottom:1px solid #eee}
 .site-header h1{margin:0 0 8px; font-size:28px}
@@ -14,8 +27,11 @@ body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica
 .cta{display:inline-block; margin-top:12px; background:var(--accent); color:#fff; padding:12px 18px; border-radius:8px; text-decoration:none}
 
 .lang-switch{display:flex; gap:8px; position:absolute; right:24px; top:20px}
-.lang-switch .lang{background:transparent; border:1px solid #e6e9ef; padding:6px 8px; border-radius:6px; cursor:pointer}
+.lang-switch .lang{background:transparent; border:1px solid #e6e9ef; padding:6px 8px; border-radius:6px; cursor:pointer; display:inline-flex; align-items:center; gap:8px}
 .lang-switch .lang.active{background:var(--accent); color:#fff; border-color:var(--accent)}
+.lang-switch .lang .lang-label{margin-left:0; font-weight:700}
+.lang-switch .flag{width:20px; height:14px; display:inline-block}
+.lang-switch .flag rect{shape-rendering:crispEdges}
 
 .cards{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:16px; margin:28px 0}
 .card{background:#fff; padding:18px; border-radius:10px; box-shadow:0 6px 18px rgba(20,33,61,0.06)}
@@ -38,6 +54,20 @@ input[type=text], input[type=email], input[type=date], select, textarea{padding:
 @media (max-width:600px){
   .site-header h1{font-size:20px}
   .container{padding:16px}
+}
+
+/* Guide profile */
+.guide-profile{margin:28px 0}
+.guide-card{background:#fff; padding:18px; border-radius:10px; display:flex; gap:16px; align-items:center}
+.guide-photo{width:160px; height:160px; object-fit:cover; border-radius:10px}
+.guide-info h3{margin:0 0 6px}
+.guide-role{color:var(--muted); margin:0 0 8px}
+.guide-bio{margin:0 0 10px}
+.guide-contact a{color:var(--accent); text-decoration:none}
+
+@media (max-width:700px){
+  .guide-card{flex-direction:column; align-items:flex-start}
+  .guide-photo{width:100%; height:220px}
 }
 
 /* Gallery styles */
