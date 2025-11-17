@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title data-i18n="header.title">Экскурсии на Кубе — Гид из Гаваны</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="lang-switch">
+        <button class="lang active" data-lang="ru">RU</button>
+        <button class="lang" data-lang="es">ES</button>
+      </div>
+      <h1 data-i18n="header.title">Кубинские экскурсии: Гавана • Варадеро • Сьенфуэгос</h1>
+      <p class="tag" data-i18n="header.tag">Русскоговорящий туризм с кубинским гидом — безопасно, аутентично и с душой</p>
+      <a class="cta" href="#form" data-i18n="header.cta">Заявка на экскурсию</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="tours" class="cards">
+      <article class="card">
+        <h2 data-i18n="tours.havana.title">Гавана</h2>
+        <p data-i18n="tours.havana.text">Исторический центр, классические машины, живая музыка и секреты местной кухни. Идеально для знакомство с Кубой.</p>
+      </article>
+      <article class="card">
+        <h2 data-i18n="tours.varadero.title">Варадеро</h2>
+        <p data-i18n="tours.varadero.text">Белоснежные пляжи и кристально чистая вода. Комбинируем пляжный отдых с прогулками и культурой.</p>
+      </article>
+      <article class="card">
+        <h2 data-i18n="tours.cienfuegos.title">Сьенфуэгос</h2>
+        <p data-i18n="tours.cienfuegos.text">Французская архитектура, спокойная провинциальная атмосфера и живописные набережные.</p>
+      </article>
+    </section>
+
+    <section id="benefits" class="benefits">
+      <h2 data-i18n="benefits.heading">Почему стоит выбрать кубинского гида?</h2>
+      <ul>
+        <li data-i18n-html="benefits.li1"><strong>Знание местности:</strong> короткие пути, лучшие смотровые и скрытые места.</li>
+        <li data-i18n-html="benefits.li2"><strong>Языковая поддержка:</strong> сопровождение на русском или помощь с переводом.</li>
+        <li data-i18n-html="benefits.li3"><strong>Аутентичный опыт:</strong> доступ к местам и событиям, которые не в путеводителях.</li>
+        <li data-i18n-html="benefits.li4"><strong>Безопасность и комфорт:</strong> помощь с логистикой, транспортом и оплатами.</li>
+        <li data-i18n-html="benefits.li5"><strong>Гибкие маршруты:</strong> подстраиваемся под ваши интересы и ритм.</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2 data-i18n="contact.heading">Контакты</h2>
+      <p data-i18n="contact.prompt">Свяжитесь с нами удобным способом:</p>
+      <ul>
+        <li><span data-i18n="contact.telegram_label">Telegram:</span> <a id="telegramLink" href="https://t.me/your_channel" target="_blank">t.me/your_channel</a></li>
+        <li><span data-i18n="contact.email_label">Email:</span> <a id="emailLink" href="mailto:info@example.com">info@example.com</a></li>
+        <li><span data-i18n="contact.whatsapp_label">WhatsApp:</span> <a id="whatsappLink" href="https://wa.me/1234567890" target="_blank">+1 234 567 890</a></li>
+      </ul>
+    </section>
+
+    <section id="form" class="form-section">
+      <h2 data-i18n="form.heading">Заявка на экскурсию</h2>
+      <p data-i18n="form.description">Заполните короткую форму — мы свяжемся с вами из Кубы для подтверждения.</p>
+      <form id="bookingForm">
+        <label for="name" data-i18n="form.name_label">Имя и фамилия</label>
+        <input id="name" name="name" type="text" required>
+
+        <label for="phone" data-i18n="form.phone_label">Телефон (с кодом страны)</label>
+        <input id="phone" name="phone" type="text" placeholder="+7..." data-i18n-placeholder="form.phone_placeholder" required>
+
+        <label for="email" data-i18n="form.email_label">Email</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="tour" data-i18n="form.tour_label">Выберите экскурсию</label>
+        <select id="tour" name="tour">
+          <option data-i18n="tour.opt.havana">Гавана</option>
+          <option data-i18n="tour.opt.varadero">Варадеро</option>
+          <option data-i18n="tour.opt.cienfuegos">Сьенфуэгос</option>
+        </select>
+
+        <label for="date" data-i18n="form.date_label">Предполагаемая дата</label>
+        <input id="date" name="date" type="date">
+
+        <label for="message" data-i18n="form.message_label">Комментарий / пожелания</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit" class="btn" data-i18n="form.submit">Отправить заявку</button>
+      </form>
+      <p class="note" data-i18n="form.note">Форма откроет ваше почтовое приложение для отправки запроса на нашу почту. Измените контакт в `index.html` при необходимости.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p data-i18n="footer">© Кубинские экскурсии — Русскоговорящие клиенты приветствуются</p>
+    </div>
+  </footer>
+
+  <script>
+    // Контактные данные — замените на реальные
+    const CONTACT_EMAIL = 'info@example.com';
+    const TELEGRAM_LINK = 'https://t.me/your_channel';
+    const WHATSAPP_NUMBER = '1234567890'; // в формате международного номера без '+' для wa.me
+
+    // Переводы RU / ES
+    const translations = {
+      ru: {
+        'header.title': 'Кубинские экскурсии: Гавана • Варадеро • Сьенфуэгос',
+        'header.tag': 'Русскоговорящий туризм с кубинским гидом — безопасно, аутентично и с душой',
+        'header.cta': 'Заявка на экскурсию',
+        'tours.havana.title': 'Гавана',
+        'tours.havana.text': 'Исторический центр, классические машины, живая музыка и секреты местной кухни. Идеально для знакомство с Кубой.',
+        'tours.varadero.title': 'Варадеро',
+        'tours.varadero.text': 'Белоснежные пляжи и кристально чистая вода. Комбинируем пляжный отдых с прогулками и культурой.',
+        'tours.cienfuegos.title': 'Сьенфуэгос',
+        'tours.cienfuegos.text': 'Французская архитектура, спокойная провинциальная атмосфера и живописные набережные.',
+        'benefits.heading': 'Почему стоит выбрать кубинского гида?',
+        'benefits.li1': '<strong>Знание местности:</strong> короткие пути, лучшие смотровые и скрытые места.',
+        'benefits.li2': '<strong>Языковая поддержка:</strong> сопровождение на русском или помощь с переводом.',
+        'benefits.li3': '<strong>Аутентичный опыт:</strong> доступ к местам и событиям, которые не в путеводителях.',
+        'benefits.li4': '<strong>Безопасность и комфорт:</strong> помощь с логистикой, транспортом и оплатами.',
+        'benefits.li5': '<strong>Гибкие маршруты:</strong> подстраиваемся под ваши интересы и ритм.',
+        'contact.heading': 'Контакты',
+        'contact.prompt': 'Свяжитесь с нами удобным способом:',
+        'contact.telegram_label': 'Telegram:',
+        'contact.email_label': 'Email:',
+        'contact.whatsapp_label': 'WhatsApp:',
+        'form.heading': 'Заявка на экскурсию',
+        'form.description': 'Заполните короткую форму — мы свяжемся с вами из Кубы для подтверждения.',
+        'form.name_label': 'Имя и фамилия',
+        'form.phone_label': 'Телефон (с кодом страны)',
+        'form.phone_placeholder': '+7...',
+        'form.email_label': 'Email',
+        'form.tour_label': 'Выберите экскурсию',
+        'tour.opt.havana': 'Гавана',
+        'tour.opt.varadero': 'Варадеро',
+        'tour.opt.cienfuegos': 'Сьенфуэгос',
+        'form.date_label': 'Предполагаемая дата',
+        'form.message_label': 'Комментарий / пожелания',
+        'form.submit': 'Отправить заявку',
+        'form.note': 'Форма откроет ваше почтовое приложение для отправки запроса на нашу почту. Измените контакт в `index.html` при необходимости.',
+        'footer': '© Кубинские экскурсии — Русскоговорящие клиенты приветствуются',
+        'form.subject_prefix': 'Запрос экскурсии'
+      },
+      es: {
+        'header.title': 'Excursiones en Cuba: La Habana • Varadero • Cienfuegos',
+        'header.tag': 'Guías cubanos para turistas rusos — seguro, auténtico y con sabor local',
+        'header.cta': 'Solicitar excursión',
+        'tours.havana.title': 'La Habana',
+        'tours.havana.text': 'Centro histórico, coches clásicos, música en vivo y secretos de la cocina local. Perfecto para conocer Cuba.',
+        'tours.varadero.title': 'Varadero',
+        'tours.varadero.text': 'Playas de arena blanca y aguas cristalinas. Combinamos descanso con paseos y cultura.',
+        'tours.cienfuegos.title': 'Cienfuegos',
+        'tours.cienfuegos.text': 'Arquitectura de inspiración francesa, ambiente tranquilo y malecón pintoresco.',
+        'benefits.heading': '¿Por qué elegir un guía cubano?',
+        'benefits.li1': '<strong>Conocimiento local:</strong> atajos, los mejores miradores y lugares escondidos.',
+        'benefits.li2': '<strong>Apoyo lingüístico:</strong> acompañamiento en ruso o ayuda con traducción.',
+        'benefits.li3': '<strong>Experiencia auténtica:</strong> acceso a lugares y eventos fuera de las guías.',
+        'benefits.li4': '<strong>Seguridad y comodidad:</strong> ayuda con logística, transporte y pagos.',
+        'benefits.li5': '<strong>Rutas flexibles:</strong> adaptamos el recorrido a tus intereses y ritmo.',
+        'contact.heading': 'Contactos',
+        'contact.prompt': 'Contáctanos por el canal que prefieras:',
+        'contact.telegram_label': 'Telegram:',
+        'contact.email_label': 'Correo:',
+        'contact.whatsapp_label': 'WhatsApp:',
+        'form.heading': 'Solicitud de excursión',
+        'form.description': 'Completa el formulario breve — nos contactaremos desde Cuba para confirmar.',
+        'form.name_label': 'Nombre y apellidos',
+        'form.phone_label': 'Teléfono (con código de país)',
+        'form.phone_placeholder': '+7...',
+        'form.email_label': 'Correo electrónico',
+        'form.tour_label': 'Elige excursión',
+        'tour.opt.havana': 'La Habana',
+        'tour.opt.varadero': 'Varadero',
+        'tour.opt.cienfuegos': 'Cienfuegos',
+        'form.date_label': 'Fecha prevista',
+        'form.message_label': 'Comentario / peticiones',
+        'form.submit': 'Enviar solicitud',
+        'form.note': 'El formulario abrirá tu cliente de correo con el mensaje listo para enviar. Cambia el contacto en `index.html` si es necesario.',
+        'footer': '© Excursiones en Cuba — Bienvenidos clientes rusohablantes',
+        'form.subject_prefix': 'Solicitud de excursión'
+      }
+    };
+
+    // helpers para aplicar traducciones
+    let currentLang = 'ru';
+
+    function applyTranslations(lang){
+      const map = translations[lang] || translations.ru;
+      // elements with data-i18n
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if(map[key]) el.textContent = map[key];
+      });
+      // elements with data-i18n-html (allow HTML like <strong>)
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if(map[key]) el.innerHTML = map[key];
+      });
+      // placeholders
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if(map[key]) el.setAttribute('placeholder', map[key]);
+      });
+      // select options
+      document.querySelectorAll('option[data-i18n]').forEach(opt => {
+        const key = opt.getAttribute('data-i18n');
+        if(map[key]) opt.textContent = map[key];
+      });
+      // options with tour.* keys
+      document.querySelectorAll('option[data-i18n="tour.opt.havana"]').forEach(o=>o.textContent = map['tour.opt.havana'] || o.textContent);
+      document.querySelectorAll('option[data-i18n="tour.opt.varadero"]').forEach(o=>o.textContent = map['tour.opt.varadero'] || o.textContent);
+      document.querySelectorAll('option[data-i18n="tour.opt.cienfuegos"]').forEach(o=>o.textContent = map['tour.opt.cienfuegos'] || o.textContent);
+      // html lang
+      document.documentElement.lang = lang;
+      currentLang = lang;
+    }
+
+    // aplicar contactos dinámicos
+    document.getElementById('telegramLink').href = TELEGRAM_LINK;
+    document.getElementById('emailLink').href = 'mailto:' + CONTACT_EMAIL;
+    document.getElementById('whatsappLink').href = 'https://wa.me/' + WHATSAPP_NUMBER;
+
+    // switcher UI
+    document.querySelectorAll('.lang-switch .lang').forEach(btn => {
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.lang-switch .lang').forEach(b=>b.classList.remove('active'));
+        this.classList.add('active');
+        applyTranslations(this.getAttribute('data-lang'));
+      });
+    });
+
+    // form submit usa traducciones actuales
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const tour = document.getElementById('tour').value;
+      const date = document.getElementById('date').value;
+      const message = document.getElementById('message').value.trim();
+
+      const t = translations[currentLang] || translations.ru;
+      const subject = encodeURIComponent(`${t['form.subject_prefix']}: ${tour} — ${name}`);
+      const bodyLines = [
+        `${t['form.name_label']}: ${name}`,
+        `${t['form.phone_label']}: ${phone}`,
+        `${t['form.email_label']}: ${email}`,
+        `${t['form.tour_label']}: ${tour}`,
+        `${t['form.date_label']}: ${date}`,
+        '',
+        `${t['form.message_label']}:`,
+        `${message}`
+      ];
+      const body = encodeURIComponent(bodyLines.join('\n'));
+
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    });
+
+    // inicializa con ruso
+    document.addEventListener('DOMContentLoaded', function(){
+      applyTranslations('ru');
+    });
+  </script>
+</body>
+</html>
