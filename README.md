@@ -47,6 +47,12 @@ Ejemplo de reemplazo en `index.html`:
 
 Después de cambiar las imágenes, puedes editar las leyendas (captions) en el objeto `translations` dentro de `index.html` si quieres textos personalizados en RU y ES.
 
+Carrusel
+- He convertido la galería en un carrusel horizontal con varios cards. Por defecto usa la misma imagen repetida (la imagen 3). Puedes seguir estos pasos para personalizar:
+	1. Reemplaza las URLs dentro de los `<img>` en la sección `#gallery` por tus propias imágenes (usar `assets/` es recomendable para sitios offline).
+	2. Ajusta el número de cards añadiendo o eliminando `<figure class="carousel-item">` en `index.html`.
+	3. Si quieres, puedo añadir soporte para deslizar con touch avanzado o autoplay.
+
 Дальнейшие улучшения (опционально)
 - Подключить серверную обработку заявок (например, Formspree, Netlify Forms или собственный endpoint), чтобы не полагаться на локальный почтовый клиент.
 - Добавить реальные изображения, иконки и перевести контент параллельно на английский/испанский при необходимости.
