@@ -35,6 +35,37 @@
       </article>
     </section>
 
+    <section id="gallery" class="gallery">
+      <h2 data-i18n="gallery.heading">Галерея</h2>
+      <p data-i18n="gallery.description">Фотографии мест и активностей с гидами</p>
+      <div class="gallery-grid">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1505765059847-687d6a9f4f5e?w=800&q=80&auto=format&fit=crop" alt="La Habana" data-full="https://images.unsplash.com/photo-1505765059847-687d6a9f4f5e?w=1600&q=80&auto=format&fit=crop" data-caption-key="gallery.havana"/>
+          <figcaption data-i18n="gallery.havana">Гавана — классические машины и старый город</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1508264165352-c1d0f0a4fb9b?w=800&q=80&auto=format&fit=crop" alt="Varadero" data-full="https://images.unsplash.com/photo-1508264165352-c1d0f0a4fb9b?w=1600&q=80&auto=format&fit=crop" data-caption-key="gallery.varadero"/>
+          <figcaption data-i18n="gallery.varadero">Варадеро — пляжи и море</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=800&q=80&auto=format&fit=crop" alt="Cienfuegos" data-full="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=1600&q=80&auto=format&fit=crop" data-caption-key="gallery.cienfuegos"/>
+          <figcaption data-i18n="gallery.cienfuegos">Сьенфуэгос — набережные и архитектура</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1504470695779-756b3a0c1b9e?w=800&q=80&auto=format&fit=crop" alt="Guide" data-full="https://images.unsplash.com/photo-1504470695779-756b3a0c1b9e?w=1600&q=80&auto=format&fit=crop" data-caption-key="gallery.guide"/>
+          <figcaption data-i18n="gallery.guide">Экскурсовод: личный и внимательный гид</figcaption>
+        </figure>
+      </div>
+      <!-- Modal -->
+      <div id="imgModal" class="img-modal" aria-hidden="true">
+        <div class="img-modal-content">
+          <button id="imgModalClose" class="img-modal-close" aria-label="Закрыть">×</button>
+          <img id="imgModalImg" src="" alt="" />
+          <p id="imgModalCaption"></p>
+        </div>
+      </div>
+    </section>
+
     <section id="benefits" class="benefits">
       <h2 data-i18n="benefits.heading">Почему стоит выбрать кубинского гида?</h2>
       <ul>
@@ -180,6 +211,21 @@
       }
     };
 
+    // traducciones captions galería
+    translations.ru['gallery.heading'] = 'Галерея';
+    translations.ru['gallery.description'] = 'Фотографии мест и активностей с гидами';
+    translations.ru['gallery.havana'] = 'Гавана — классические машины и старый город';
+    translations.ru['gallery.varadero'] = 'Варадеро — пляжи и море';
+    translations.ru['gallery.cienfuegos'] = 'Сьенфуэгос — набережные и архитектура';
+    translations.ru['gallery.guide'] = 'Экскурсовод: личный и внимательный гид';
+
+    translations.es['gallery.heading'] = 'Galería';
+    translations.es['gallery.description'] = 'Fotos de los lugares y actividades con guías';
+    translations.es['gallery.havana'] = 'La Habana — coches clásicos y casco histórico';
+    translations.es['gallery.varadero'] = 'Varadero — playas y mar';
+    translations.es['gallery.cienfuegos'] = 'Cienfuegos — malecón y arquitectura';
+    translations.es['gallery.guide'] = 'Guía: atención personalizada y experto local';
+
     // helpers para aplicar traducciones
     let currentLang = 'ru';
 
@@ -258,6 +304,35 @@
     // inicializa con ruso
     document.addEventListener('DOMContentLoaded', function(){
       applyTranslations('ru');
+    });
+
+    // Gallery: open modal on click
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('imgModalImg');
+    const modalCaption = document.getElementById('imgModalCaption');
+    const modalClose = document.getElementById('imgModalClose');
+
+    document.querySelectorAll('.gallery-grid img').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', function(){
+        const full = this.getAttribute('data-full') || this.src;
+        const key = this.getAttribute('data-caption-key');
+        modalImg.src = full;
+        modalImg.alt = this.alt || '';
+        modalCaption.textContent = (translations[currentLang] && translations[currentLang][key]) || this.nextElementSibling?.textContent || '';
+        modal.setAttribute('aria-hidden','false');
+        modal.classList.add('open');
+      });
+    });
+
+    modalClose.addEventListener('click', function(){
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden','true');
+      modalImg.src = '';
+    });
+
+    modal.addEventListener('click', function(e){
+      if(e.target === modal) { modalClose.click(); }
     });
   </script>
 </body>

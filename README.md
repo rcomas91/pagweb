@@ -36,6 +36,17 @@ document.addEventListener('DOMContentLoaded', function(){
 - Можно заменить `mailto:` на отправку через Formspree или другой сервис, если хотите собирать заявки без использования почтовых клиентов.
 - Можно добавить imágenes y assets para una versión más atractiva (recomiendo usar rutas relativas en `index.html`).
 
+Galería de imágenes
+- La página incluye una galería con miniaturas y modal. Las imágenes usadas son placeholders desde Unsplash. Si quieres reemplazarlas por imágenes propias, coloca los archivos en una carpeta `assets/` y actualiza los atributos `src` y `data-full` en los elementos `<img>` dentro de la sección `#gallery` en `index.html`.
+
+Ejemplo de reemplazo en `index.html`:
+
+```html
+<img src="assets/havana-thumb.jpg" data-full="assets/havana-full.jpg" alt="La Habana" />
+```
+
+Después de cambiar las imágenes, puedes editar las leyendas (captions) en el objeto `translations` dentro de `index.html` si quieres textos personalizados en RU y ES.
+
 Дальнейшие улучшения (опционально)
 - Подключить серверную обработку заявок (например, Formspree, Netlify Forms или собственный endpoint), чтобы не полагаться на локальный почтовый клиент.
 - Добавить реальные изображения, иконки и перевести контент параллельно на английский/испанский при необходимости.
