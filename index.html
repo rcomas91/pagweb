@@ -30,24 +30,36 @@
         </button>
       </div>
       <h1 data-i18n="header.title">Кубинские экскурсии: Гавана • Варадеро • Сьенфуэгос</h1>
-      <p class="tag" data-i18n="header.tag">Русскоговорящий туризм с кубинским гидом — безопасно, аутентично и с душой</p>
+      <div class="banner-list" id="bannerList" style="margin:18px 0 0 0; padding:8px 12px; background:rgba(255,255,255,0.72); border-radius:24px; box-shadow:0 1px 8px rgba(20,33,61,0.04); font-size:1.02em; color:#333; font-weight:500; display:flex; align-items:center; gap:12px; flex-wrap:wrap; border:1px solid #f2f2f2;">
+        <span data-i18n="banner.li1" style="display:inline-flex; align-items:center; gap:8px; padding:6px 12px; background:rgba(0,0,0,0.03); border-radius:999px;">🇨🇺 Tours por Cuba con guías de habla rusa</span>
+        <span data-i18n="banner.li2" style="display:inline-flex; align-items:center; gap:8px; padding:6px 12px; background:rgba(0,0,0,0.03); border-radius:999px;">🚗 Tours privados en La Habana, Trinidad y Varadero</span>
+        <span data-i18n="banner.li3" style="display:inline-flex; align-items:center; gap:8px; padding:6px 12px; background:rgba(0,0,0,0.03); border-radius:999px;">🚙 Autos cómodos con aire acondicionado (retro o minivans) ❄️</span>
+        <span data-i18n="banner.li4" style="display:inline-flex; align-items:center; gap:8px; padding:6px 12px; background:rgba(0,0,0,0.03); border-radius:999px;">📅 Reserva con antelación. 💵 Pago el día del tour.</span>
+      </div>
       <a class="cta" href="#form" data-i18n="header.cta">Заявка на экскурсию</a>
     </div>
   </header>
 
   <main class="container">
+    <h2 class="section-title" style="margin-bottom: 0;">Excursiones</h2>
     <section id="tours" class="cards">
       <article class="card">
-        <h2 data-i18n="tours.havana.title">Гавана</h2>
-        <p data-i18n="tours.havana.text">Исторический центр, классические машины, живая музыка и секреты местной кухни. Идеально для знакомство с Кубой.</p>
+        <a class="card-link" href="habana.html">
+          <h2 data-i18n="tours.havana.title">Гавана</h2>
+          <p data-i18n="tours.havana.text">Исторический центр, классические машины, живая музыка и секреты местной кухни. Идеально для знакомство с Кубой.</p>
+        </a>
       </article>
       <article class="card">
-        <h2 data-i18n="tours.varadero.title">Варадеро</h2>
-        <p data-i18n="tours.varadero.text">Белоснежные пляжи и кристально чистая вода. Комбинируем пляжный отдых с прогулками и культурой.</p>
+        <a class="card-link" href="varadero.html">
+          <h2 data-i18n="tours.varadero.title">Варадеро</h2>
+          <p data-i18n="tours.varadero.text">Белоснежные пляжи и кристально чистая вода. Комбинируем пляжный отдых с прогулками и культурой.</p>
+        </a>
       </article>
       <article class="card">
-        <h2 data-i18n="tours.cienfuegos.title">Сьенфуэгос</h2>
-        <p data-i18n="tours.cienfuegos.text">Французская архитектура, спокойная провинциальная атмосфера и живописные набережные.</p>
+        <a class="card-link" href="cienfuegos.html">
+          <h2 data-i18n="tours.cienfuegos.title">Сьенфуэгос</h2>
+          <p data-i18n="tours.cienfuegos.text">Французская архитектура, спокойная провинциальная атмосфера и живописные набережные.</p>
+        </a>
       </article>
     </section>
 
@@ -57,35 +69,33 @@
       <div class="carousel">
         <button class="carousel-prev" aria-label="Prev">‹</button>
         <div class="carousel-track">
-          <!-- Repetimos la misma imagen (imagen 3) en varias cards -->
-          <!-- Imagen 3: https://images.unsplash.com/photo-1549880338-65ddcdfd017b -->
           <figure class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=800&q=80&auto=format&fit=crop" alt="Cienfuegos" data-full="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=1600&q=80&auto=format&fit=crop" data-caption-key="gallery.cienfuegos" />
-            <figcaption data-i18n="gallery.cienfuegos">Сьенфуэгос — набережные и архитектура</figcaption>
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop" alt="La Habana" data-full="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1600&q=80&auto=format&fit=crop" data-caption-key="gallery.havana" />
+            <figcaption data-i18n="gallery.havana">Гавана — классические машины и старый город</figcaption>
+          </figure>
+          <figure class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=800&q=80&auto=format&fit=crop" alt="La Habana paisaje" data-full="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1600&q=80&auto=format&fit=crop" data-caption-key="gallery.havana" />
+            <figcaption data-i18n="gallery.havana">Гавана — классические машины и старый город</figcaption>
+          </figure>
+          <figure class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80&auto=format&fit=crop" alt="Varadero" data-full="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80&auto=format&fit=crop" data-caption-key="gallery.varadero" />
+            <figcaption data-i18n="gallery.varadero">Варадеро — пляжи и море</figcaption>
+          </figure>
+          <figure class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=800&q=80&auto=format&fit=crop" alt="Varadero playa" data-full="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=1600&q=80&auto=format&fit=crop" data-caption-key="gallery.varadero" />
+            <figcaption data-i18n="gallery.varadero">Варадеро — пляжи и море</figcaption>
           </figure>
           <figure class="carousel-item">
             <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=800&q=80&auto=format&fit=crop" alt="Cienfuegos" data-full="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=1600&q=80&auto=format&fit=crop" data-caption-key="gallery.cienfuegos" />
             <figcaption data-i18n="gallery.cienfuegos">Сьенфуэгос — набережные и архитектура</figcaption>
           </figure>
           <figure class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=800&q=80&auto=format&fit=crop" alt="Cienfuegos" data-full="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=1600&q=80&auto=format&fit=crop" data-caption-key="gallery.cienfuegos" />
+            <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=800&q=80&auto=format&fit=crop" alt="Cienfuegos paisaje" data-full="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=1600&q=80&auto=format&fit=crop" data-caption-key="gallery.cienfuegos" />
             <figcaption data-i18n="gallery.cienfuegos">Сьенфуэгос — набережные и архитектура</figcaption>
           </figure>
           <figure class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=800&q=80&auto=format&fit=crop" alt="Cienfuegos" data-full="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=1600&q=80&auto=format&fit=crop" data-caption-key="gallery.cienfuegos" />
-            <figcaption data-i18n="gallery.cienfuegos">Сьенфуэгос — набережные и архитектура</figcaption>
-          </figure>
-          <figure class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=800&q=80&auto=format&fit=crop" alt="Cienfuegos" data-full="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=1600&q=80&auto=format&fit=crop" data-caption-key="gallery.cienfuegos" />
-            <figcaption data-i18n="gallery.cienfuegos">Сьенфуэгос — набережные и архитектура</figcaption>
-          </figure>
-          <figure class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=800&q=80&auto=format&fit=crop" alt="Cienfuegos" data-full="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=1600&q=80&auto=format&fit=crop" data-caption-key="gallery.cienfuegos" />
-            <figcaption data-i18n="gallery.cienfuegos">Сьенфуэгос — набережные и архитектура</figcaption>
-          </figure>
-          <figure class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=800&q=80&auto=format&fit=crop" alt="Cienfuegos" data-full="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=1600&q=80&auto=format&fit=crop" data-caption-key="gallery.cienfuegos" />
-            <figcaption data-i18n="gallery.cienfuegos">Сьенфуэгос — набережные и архитектура</figcaption>
+            <img src="assets/guide.svg" alt="Guide" data-full="assets/guide.svg" data-caption-key="gallery.guide" />
+            <figcaption data-i18n="gallery.guide">Экскурсовод: личный и внимательный гид</figcaption>
           </figure>
         </div>
         <button class="carousel-next" aria-label="Next">›</button>
@@ -98,7 +108,7 @@
           <p id="imgModalCaption"></p>
         </div>
       </div>
-      </section>
+    </section>
 
       <!-- Guide profile section (separate from gallery) -->
       <section id="guide" class="guide-profile">
@@ -181,6 +191,10 @@
     // Переводы RU / ES
     const translations = {
       ru: {
+        'banner.li1': '🇨🇺 Туры по Кубе с русскоязычными гидами',
+        'banner.li2': '🚗 Частные туры по Гаване, Тринидаду и Варадеро',
+        'banner.li3': '🚙 Комфортные авто с кондиционером (ретро или минивэны) ❄️',
+        'banner.li4': '📅 Бронируйте заранее. 💵 Оплата в день тура.',
         'header.title': 'Кубинские экскурсии: Гавана • Варадеро • Сьенфуэгос',
         'header.tag': 'Русскоговорящий туризм с кубинским гидом — безопасно, аутентично и с душой',
         'header.cta': 'Заявка на экскурсию',
@@ -219,6 +233,10 @@
         'form.subject_prefix': 'Запрос экскурсии'
       },
       es: {
+        'banner.li1': '🇨🇺 Tours por Cuba con guías de habla rusa',
+        'banner.li2': '🚗 Tours privados en La Habana, Trinidad y Varadero',
+        'banner.li3': '🚙 Autos cómodos con aire acondicionado (retro o minivans) ❄️',
+        'banner.li4': '📅 Reserva con antelación. 💵 Pago el día del tour.',
         'header.title': 'Excursiones en Cuba: La Habana • Varadero • Cienfuegos',
         'header.tag': 'Guías cubanos para turistas rusos — seguro, auténtico y con sabor local',
         'header.cta': 'Solicitar excursión',
