@@ -16,6 +16,12 @@
   <main class="container">
     <article class="tour-page">
       <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80&auto=format&fit=crop" alt="Catamarán Varadero" style="width:100%; border-radius:10px; margin-bottom:16px; object-fit:cover; height:320px">
+      <div class="photo-gallery" style="display:flex; gap:10px; margin:12px 0 18px 0; flex-wrap:wrap; align-items:center;">
+        <button class="thumb" data-index="0" style="border:0; background:transparent; padding:0; cursor:pointer"><img src="assets/WhatsApp%20Image%202025-12-17%20at%203.07.22%20PM.jpeg" alt="Catamarán 1" style="width:100%; max-width:220px; border-radius:8px; object-fit:contain; height:120px; background:#f8f8f8; padding:6px"></button>
+        <button class="thumb" data-index="1" style="border:0; background:transparent; padding:0; cursor:pointer"><img src="assets/WhatsApp%20Image%202025-12-17%20at%203.07.23%20PM.jpeg" alt="Catamarán 2" style="width:100%; max-width:220px; border-radius:8px; object-fit:contain; height:120px; background:#f8f8f8; padding:6px"></button>
+        <button class="thumb" data-index="2" style="border:0; background:transparent; padding:0; cursor:pointer"><img src="assets/WhatsApp%20Image%202025-12-17%20at%203.07.23%20PM%281%29.jpeg" alt="Catamarán 3" style="width:100%; max-width:220px; border-radius:8px; object-fit:contain; height:120px; background:#f8f8f8; padding:6px"></button>
+        <button class="thumb" data-index="3" style="border:0; background:transparent; padding:0; cursor:pointer"><img src="assets/WhatsApp%20Image%202025-12-17%20at%203.07.24%20PM.jpeg" alt="Catamarán 4" style="width:100%; max-width:220px; border-radius:8px; object-fit:contain; height:120px; background:#f8f8f8; padding:6px"></button>
+      </div>
       <section id="content" class="tour-section">
         <h1 data-i18n="title">Catamarán en Varadero: Libertad y Esnórquel</h1>
         <p class="subtitle" data-i18n="subtitle">Aventura marina privada en aguas cristalinas de Varadero</p>
@@ -29,6 +35,79 @@
   </main>
 
   <footer class="site-footer"><div class="container"><p>&copy; Tours Cuba</p></div></footer>
+  
+    <!-- Modal / Carrusel de imágenes -->
+    <div id="galleryModal" aria-hidden="true" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); align-items:center; justify-content:center; z-index:1200;">
+      <div style="position:relative; max-width:90vw; max-height:90vh; width:100%; height:100%; display:flex; align-items:center; justify-content:center; box-sizing:border-box; padding:12px;">
+        <button id="galleryClose" aria-label="Cerrar" style="position:absolute; top:8px; right:8px; background:transparent; border:0; color:#fff; font-size:28px; cursor:pointer">×</button>
+        <button id="galleryPrev" aria-label="Anterior" style="position:absolute; left:8px; background:rgba(0,0,0,0.3); border:0; color:#fff; padding:8px 12px; border-radius:6px; cursor:pointer">‹</button>
+        <img id="galleryModalImg" src="" alt="" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; border-radius:8px; box-shadow:0 8px 30px rgba(0,0,0,0.6)">
+        <button id="galleryNext" aria-label="Siguiente" style="position:absolute; right:8px; background:rgba(0,0,0,0.3); border:0; color:#fff; padding:8px 12px; border-radius:6px; cursor:pointer">›</button>
+      </div>
+    </div>
+
+    <script>
+      (function(){
+        const images = [
+          'assets/WhatsApp%20Image%202025-12-17%20at%203.07.22%20PM.jpeg',
+          'assets/WhatsApp%20Image%202025-12-17%20at%203.07.23%20PM.jpeg',
+          'assets/WhatsApp%20Image%202025-12-17%20at%203.07.23%20PM%281%29.jpeg',
+          'assets/WhatsApp%20Image%202025-12-17%20at%203.07.24%20PM.jpeg'
+        ];
+
+        const modal = document.getElementById('galleryModal');
+        const modalImg = document.getElementById('galleryModalImg');
+        const btnPrev = document.getElementById('galleryPrev');
+        const btnNext = document.getElementById('galleryNext');
+        const btnClose = document.getElementById('galleryClose');
+        let current = 0;
+
+        function openAt(index){
+          current = (index + images.length) % images.length;
+          modalImg.src = images[current];
+          modalImg.alt = 'Imagen ' + (current+1);
+          // ensure image fits the viewport
+          modalImg.style.maxWidth = '90vw';
+          modalImg.style.maxHeight = '90vh';
+          modalImg.style.width = 'auto';
+          modalImg.style.height = 'auto';
+          modal.style.display = 'flex';
+          modal.setAttribute('aria-hidden','false');
+          document.body.style.overflow = 'hidden';
+          btnPrev.focus();
+        }
+
+        function closeModal(){
+          modal.style.display = 'none';
+          modal.setAttribute('aria-hidden','true');
+          modalImg.src = '';
+          document.body.style.overflow = '';
+        }
+
+        function showNext(delta){
+          current = (current + delta + images.length) % images.length;
+          modalImg.src = images[current];
+          modalImg.alt = 'Imagen ' + (current+1);
+        }
+
+        document.querySelectorAll('.thumb').forEach(btn=>{
+          btn.addEventListener('click', ()=> openAt(Number(btn.getAttribute('data-index'))));
+        });
+
+        btnPrev.addEventListener('click', ()=> showNext(-1));
+        btnNext.addEventListener('click', ()=> showNext(1));
+        btnClose.addEventListener('click', closeModal);
+
+        modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
+
+        document.addEventListener('keydown', (e)=>{
+          if(modal.style.display !== 'flex') return;
+          if(e.key === 'Escape') closeModal();
+          if(e.key === 'ArrowLeft') showNext(-1);
+          if(e.key === 'ArrowRight') showNext(1);
+        });
+      })();
+    </script>
 
   <script>
     const pageTranslations = {

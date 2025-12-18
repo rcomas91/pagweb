@@ -131,7 +131,7 @@
       <!-- Guide profile section (separate from gallery) -->
       <section id="guide" class="guide-profile">
         <div class="guide-card container">
-          <img class="guide-photo" src="assets/guide.svg" alt="Guide portrait" data-full="assets/guide.svg" />
+          <img class="guide-photo" src="assets/guide.jpg" alt="Miguel Rodriguez" data-full="assets/guide.jpg" />
           <div class="guide-info">
             <h3 data-i18n="guide.name">Мигель Родригес</h3>
             <p class="guide-role" data-i18n="guide.role">Ваш кубинский гид</p>
@@ -158,7 +158,7 @@
       <ul>
         <li><span data-i18n="contact.telegram_label">Telegram:</span> <a id="telegramLink" href="https://t.me/your_channel" target="_blank">t.me/your_channel</a></li>
         <li><span data-i18n="contact.email_label">Email:</span> <a id="emailLink" href="mailto:jorgendelapazmanuel@gmail.com">jorgendelapazmanuel@gmail.com</a></li>
-        <li><span data-i18n="contact.whatsapp_label">WhatsApp:</span> <a id="whatsappLink" href="https://wa.me/1234567890" target="_blank">(+53) 52741394</a></li>
+        <li><span data-i18n="contact.whatsapp_label">WhatsApp:</span> <a id="whatsappLink" href="https://wa.me/5352741394" target="_blank">(+53) 52741394</a></li>
       </ul>
     </section>
 
@@ -207,7 +207,7 @@
     // Контактные данные — замените на реальные
     const CONTACT_EMAIL = 'jorgendelapazmanuel@gmail.com';
     const TELEGRAM_LINK = 'https://t.me/your_channel';
-    const WHATSAPP_NUMBER = '1234567890'; // в формате международного номера без '+' для wa.me
+    const WHATSAPP_NUMBER = '5352741394'; // в формате международного номера без '+' для wa.me
 
     // Переводы RU / ES
     const translations = {
@@ -438,6 +438,12 @@
         const key = this.getAttribute('data-caption-key');
         modalImg.src = full;
         modalImg.alt = this.alt || '';
+        // ensure image fits the viewport
+        modalImg.style.maxWidth = '90vw';
+        modalImg.style.maxHeight = '90vh';
+        modalImg.style.width = 'auto';
+        modalImg.style.height = 'auto';
+        modalImg.style.objectFit = 'contain';
         modalCaption.textContent = (translations[currentLang] && translations[currentLang][key]) || this.nextElementSibling?.textContent || '';
         modal.setAttribute('aria-hidden','false');
         modal.classList.add('open');
